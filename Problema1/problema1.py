@@ -12,13 +12,14 @@ ytr = y[0:400].copy()
 Xte = X[400:500].copy()
 yte = y[400:500].copy()
 
+print(y)
 # create model
 model = Sequential()
-model.add(Dense(30, input_dim=2, activation='sigmoid'))
-model.add(Dense(12, activation='relu'))
+model.add(Dense(5, input_dim=2, kernel_initializer='normal', activation='sigmoid'))
+model.add(Dense(12, activation='relu', kernel_initializer='normal'))
 #model.add(Dense(12, activation='relu'))
 #model.add(Dense(4, activation='relu'))
-model.add(Dense(1, activation='linear'))
+model.add(Dense(1, activation='sigmoid', kernel_initializer='normal'))
 # Compile model
 sgd = SGD(lr=0.01)
 model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
