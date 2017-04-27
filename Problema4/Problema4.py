@@ -52,7 +52,7 @@ Yva = Ytr[0:10000].copy()
 
 batch_size = 32
 num_classes = 10
-epochs = 400
+epochs = 700
 
 
 # Convert class vectors to binary class matrices.
@@ -121,5 +121,14 @@ plt.plot(hist.history['val_loss'])
 plt.title('model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.savefig('problema4.jpg')
+plt.legend(['loss train', 'loss test'], loc='upper left')
+plt.savefig('lossProblema4.jpg')
+
+plt.clf()
+plt.plot(hist.history['acc'])
+plt.plot(hist.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('acc')
+plt.xlabel('epoch')
+plt.legend(['acc train','acc test'], loc='upper left')
+plt.savefig('accProblema4.jpg')
