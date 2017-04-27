@@ -62,6 +62,7 @@ epochs = 400
 Xtr = Xtr.astype('float32')
 Xte= Xte.astype('float32')
 
+
 from sklearn.preprocessing import StandardScaler
 from keras.regularizers import l1
 from keras.layers import Dropout
@@ -72,7 +73,8 @@ Xtrs = pd.DataFrame(scaler.transform(Xtr))
 
 scalerVa = StandardScaler().fit(Xva)
 Xvas = pd.DataFrame(scalerVa.transform(Xva))
-Xtes = pd.DataFrame(scaler.transform(Xva))
+scalerVa = StandardScaler().fit(Xte)
+Xtes = pd.DataFrame(scaler.transform(Xte))
  
 # Convert class vectors to binary class matrices.
 Ytr = keras.utils.to_categorical(Ytr, num_classes)
