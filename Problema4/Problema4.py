@@ -46,7 +46,7 @@ def load_CIFAR10(PATH):
 Xtr,Ytr,Xte,Yte = load_CIFAR10('data/')
 
 Xva = Xtr[0:10000].copy()
-Yva = Ytr[0:10000].copy()
+Yva = Ytr[0:3000].copy()
 
 
 
